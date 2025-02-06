@@ -14,6 +14,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults // Importa ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -31,6 +32,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color // Importa Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
@@ -92,7 +94,7 @@ fun EmailField(viewModel: LoginViewModel) {
         value = viewModel.email,
         onValueChange = { viewModel.onEmailChanged(it) },
         modifier = Modifier.fillMaxWidth(),
-        label = { Text(text = "Email", color = MaterialTheme.colorScheme.onBackground) },
+        label = { Text(text = "Correo", color = MaterialTheme.colorScheme.onBackground) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
         singleLine = true,
         maxLines = 1,
@@ -120,7 +122,7 @@ fun PasswordField(viewModel: LoginViewModel) {
         value = viewModel.password,
         onValueChange = { viewModel.onPasswordChanged(it) },
         modifier = Modifier.fillMaxWidth(),
-        label = { Text(text = "Password", color = MaterialTheme.colorScheme.onBackground) },
+        label = { Text(text = "Contraseña", color = MaterialTheme.colorScheme.onBackground) },
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         singleLine = true,
         maxLines = 1,
@@ -155,9 +157,13 @@ fun LoginButton(viewModel: LoginViewModel) {
         modifier = Modifier
             .fillMaxWidth()
             .height(48.dp),
-        shape = RoundedCornerShape(12.dp)
+        shape = RoundedCornerShape(12.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(0xFF8B4513),
+            contentColor = Color.White
+        )
     ) {
-        Text(text = "Iniciar sesión", color = MaterialTheme.colorScheme.onPrimary, fontWeight = FontWeight.Bold, fontSize = MaterialTheme.typography.bodyMedium.fontSize)
+        Text(text = "Iniciar sesión",  fontWeight = FontWeight.Bold, fontSize = MaterialTheme.typography.bodyMedium.fontSize)
     }
 }
 
@@ -168,7 +174,7 @@ fun NoAccountButton(navController: NavHostController) {
         horizontalArrangement = Arrangement.Center
     ) {
         TextButton(onClick = { navController.navigate("register_screen") }) {
-            Text(text = "¿No tienes cuenta? Regístrate")
+            Text(text = "Regístrate")
         }
     }
 }
@@ -176,7 +182,7 @@ fun NoAccountButton(navController: NavHostController) {
 @Composable
 fun HeaderImage(modifier: Modifier) {
     Image(
-        painter = painterResource(id = R.drawable.logo),
+        painter = painterResource(id = R.drawable.capibara),
         contentDescription = "Header",
         modifier = modifier,
     )

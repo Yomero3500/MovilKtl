@@ -22,6 +22,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color // Importa Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -47,40 +48,20 @@ fun HomeScreen(navController: NavHostController) {
                     .height(150.dp)
                     .padding(vertical = 8.dp),
                 shape = RoundedCornerShape(30.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
+                colors = ButtonDefaults.buttonColors( // Color Marron Oscuro
+                    containerColor = Color(0xFF8B4513), // Marrón oscuro (Saddle Brown)
+                    contentColor = Color.White
+                )
             ) {
                 Icon(
                     imageVector = Icons.Filled.Add,
                     contentDescription = "Agregar Producto",
-                    tint = MaterialTheme.colorScheme.onPrimary
+                    tint = MaterialTheme.colorScheme.onPrimary  // Mantiene el color del icono de MaterialTheme
                 )
                 Spacer(Modifier.padding(4.dp))
                 Text(
-                    text = "Agregar Producto",
-                    color = MaterialTheme.colorScheme.onPrimary,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 20.sp
-                )
-            }
-
-            Button(
-                onClick = { navController.navigate("list_products_screen") },
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(150.dp)
-                    .padding(vertical = 8.dp),
-                shape = RoundedCornerShape(30.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
-            ) {
-                Icon(
-                    imageVector = Icons.Filled.List,
-                    contentDescription = "Listar Productos",
-                    tint = MaterialTheme.colorScheme.onPrimary
-                )
-                Spacer(Modifier.padding(4.dp))
-                Text(
-                    text = "Listar Productos",
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    text = "Agregar Nuevo Producto",
+                    color = Color.White, //  Texto blanco
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
@@ -93,17 +74,46 @@ fun HomeScreen(navController: NavHostController) {
                     .height(150.dp)
                     .padding(vertical = 8.dp),
                 shape = RoundedCornerShape(30.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
+                colors = ButtonDefaults.buttonColors(  // Color Marron Oscuro
+                    containerColor = Color(0xFF8B4513), // Marrón oscuro (Saddle Brown)
+                    contentColor = Color.White
+                )
             ) {
                 Icon(
                     imageVector = Icons.Filled.Settings,
-                    contentDescription = "Editar / Eliminar Producto",
-                    tint = MaterialTheme.colorScheme.onPrimary
+                    contentDescription = "Modificar Productos",
+                    tint = MaterialTheme.colorScheme.onPrimary // Mantiene el color del icono de MaterialTheme
                 )
                 Spacer(Modifier.padding(4.dp))
                 Text(
-                    text = "Editar / Eliminar Producto",
-                    color = MaterialTheme.colorScheme.onPrimary,
+                    text = "Modificar Productos",
+                    color = Color.White, // Texto blanco
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
+            }
+
+            Button(
+                onClick = { navController.navigate("list_products_screen") },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(150.dp)
+                    .padding(vertical = 8.dp),
+                shape = RoundedCornerShape(30.dp),
+                colors = ButtonDefaults.buttonColors( // Color Marron Oscuro
+                    containerColor = Color(0xFF8B4513), // Marrón oscuro (Saddle Brown)
+                    contentColor = Color.White
+                )
+            ) {
+                Icon(
+                    imageVector = Icons.Filled.List,
+                    contentDescription = "Lista de Productos",
+                    tint = MaterialTheme.colorScheme.onPrimary // Mantiene el color del icono de MaterialTheme
+                )
+                Spacer(Modifier.padding(4.dp))
+                Text(
+                    text = "Lista de Productos",
+                    color = Color.White, // Texto blanco
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
@@ -122,17 +132,20 @@ fun HomeScreen(navController: NavHostController) {
                     .height(150.dp)
                     .padding(vertical = 8.dp),
                 shape = RoundedCornerShape(30.dp),
-                colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.secondary),
+                colors = ButtonDefaults.buttonColors( // Color Rojo Oxido
+                    containerColor = Color(0xFFA72D00), // Rojo óxido
+                    contentColor = Color.White
+                )
             ) {
                 Icon(
                     imageVector = Icons.Filled.ExitToApp,
-                    contentDescription = "Salir",
-                    tint = MaterialTheme.colorScheme.onSecondary
+                    contentDescription = "Cerrar sesión",
+                    tint = MaterialTheme.colorScheme.onSecondary // Mantiene el color del icono de MaterialTheme
                 )
                 Spacer(Modifier.padding(4.dp))
                 Text(
-                    text = "Salir",
-                    color = MaterialTheme.colorScheme.onSecondary,
+                    text = "Cerrar sesión",
+                    color = Color.White, // Texto blanco
                     fontWeight = FontWeight.Bold,
                     fontSize = 20.sp
                 )
