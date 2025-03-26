@@ -27,7 +27,6 @@ interface ApiService {
     suspend fun addProduct(
         @Part("nombre") name: RequestBody,
         @Part("precio") price: RequestBody,
-        @Part("cantidad") cantidad: RequestBody,
         @Part image: MultipartBody.Part
     ): Response<Unit>
 

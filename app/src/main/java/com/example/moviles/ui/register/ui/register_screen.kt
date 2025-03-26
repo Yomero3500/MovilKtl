@@ -1,5 +1,3 @@
-package com.example.moviles.ui.register.ui
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
